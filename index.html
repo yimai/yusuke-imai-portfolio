@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yusuke ImaiのWeb制作・動画編集ポートフォリオ">
+  <title>Yusuke Imai | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --ink: #172033;
+      --muted: #657087;
+      --line: #dde2ec;
+      --accent: #3157d5;
+      --accent-soft: #e9edff;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(23, 32, 51, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(100% - 40px, 960px);
+      margin-inline: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 247, 251, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(221, 226, 236, 0.8);
+    }
+
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav-links a { text-decoration: none; }
+
+    .hero {
+      padding: 100px 0 76px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -160px;
+      top: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(49, 87, 213, 0.22), rgba(49, 87, 213, 0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 22px 0 20px;
+      font-size: clamp(2.3rem, 7vw, 4.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 660px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.12);
+    }
+
+    section { padding: 64px 0; }
+
+    .section-title {
+      margin: 0 0 26px;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      letter-spacing: -0.025em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .work {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 24px;
+      color: #fff;
+      background: linear-gradient(135deg, #172033, #3157d5);
+      box-shadow: var(--shadow);
+    }
+
+    .work small {
+      color: rgba(255,255,255,0.72);
+      letter-spacing: 0.08em;
+    }
+
+    .work h3 {
+      margin: 8px 0 12px;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+    }
+
+    .work p { color: rgba(255,255,255,0.78); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+
+    .work-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .work-links a {
+      padding: 14px 16px;
+      border-radius: 12px;
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .avatar {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 26px;
+      color: #fff;
+      background: linear-gradient(145deg, #3157d5, #6d8cff);
+      font-size: 3.2rem;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .profile p { color: var(--muted); }
+
+    footer {
+      padding: 34px 0 50px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 72px; }
+      .grid, .work, .profile { grid-template-columns: 1fr; }
+      .avatar { width: 112px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="メインナビゲーション">
+      <a class="logo" href="#top">YUSUKE IMAI</a>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#works">Works</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">WEB / CLOUD / VIDEO</span>
+        <h1>つくって、届けて、<br>きちんと運用する。</h1>
+        <p>ITエンジニアとしての経験を生かし、シンプルなWebサイト制作、AWSでの公開・運用、動画編集まで丁寧に対応します。</p>
+        <div class="actions">
+          <a class="button primary" href="#works">制作実績を見る</a>
+          <a class="button" href="https://crowdworks.jp/public/employees/5228704" target="_blank" rel="noopener">CrowdWorksプロフィール</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2 class="section-title">できること</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Web制作</h3>
+            <p>HTML・CSSやWordPressを使った、シンプルで見やすいWebサイトの構築・更新。</p>
+          </article>
+          <article class="card">
+            <h3>AWS運用</h3>
+            <p>Amazon S3を利用した静的Webサイトの公開と、継続的な運用・メンテナンス。</p>
+          </article>
+          <article class="card">
+            <h3>動画編集</h3>
+            <p>Filmoraを使用した縦型ショート動画の編集、SNS向けコンテンツ制作。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="wrap">
+        <h2 class="section-title">制作・運用実績</h2>
+        <article class="work">
+          <div>
+            <small>PERSONAL PROJECT / 2025–</small>
+            <h3>The Unreal Gallery</h3>
+            <p>2025年6月23日から、存在しない美術館をテーマにした縦型動画を企画・編集し、複数のSNSで継続的に発信しています。</p>
+            <div class="tags">
+              <span class="tag">Filmora</span>
+              <span class="tag">Video Editing</span>
+              <span class="tag">SNS Operation</span>
+            </div>
+          </div>
+          <div class="work-links">
+            <a href="https://youtube.com/@unrealgallery_ai" target="_blank" rel="noopener">YouTubeを見る →</a>
+            <a href="https://www.tiktok.com/@unrealgallery.ai" target="_blank" rel="noopener">TikTokを見る →</a>
+            <a href="https://www.instagram.com/unrealgallery.ai" target="_blank" rel="noopener">Instagramを見る →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2 class="section-title">プロフィール</h2>
+        <div class="profile">
+          <div class="avatar" aria-hidden="true">YI</div>
+          <div>
+            <h3>Yusuke Imai</h3>
+            <p>IT企業でエンジニアとして勤務しながら、副業でWeb制作・クラウド運用・動画編集に取り組んでいます。納期を守り、わかりやすく丁寧なコミュニケーションを心がけています。</p>
+            <div class="actions">
+              <a class="button" href="https://github.com/yimai" target="_blank" rel="noopener">GitHub</a>
+              <a class="button primary" href="https://crowdworks.jp/public/employees/5228704" target="_blank" rel="noopener">仕事を相談する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Yusuke Imai. Built with HTML &amp; CSS.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
