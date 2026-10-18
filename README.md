@@ -1,5 +1,9 @@
-# Yusuke Imai Portfolio
+# Yusuke Imai — Portfolio
 
-Yusuke ImaiのWeb制作・クラウド運用・動画編集ポートフォリオです。
+Technical Project Managerとしての経験と、Generative AI／Azure／Data & AI Transformation領域の実績を紹介するポートフォリオです。
 
-GitHub Pagesで公開するための、外部ライブラリを使わないシンプルな静的サイトです。
+- 公開URL: https://yimai.github.io/yusuke-imai-portfolio/
+- 構成: HTML / CSS / Vanilla JavaScript
+- ホスティング: GitHub Pages
+
+外部ライブラリやビルド処理を使わない、レスポンシブ対応の単一ページサイトです。
