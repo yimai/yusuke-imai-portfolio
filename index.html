@@ -166,8 +166,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.24fr) minmax(340px, 0.76fr);
-      gap: 70px;
+      grid-template-columns: minmax(0, 820px);
+      gap: 0;
       align-items: center;
     }
 
@@ -322,7 +322,7 @@
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       margin-top: 72px;
       background: var(--surface);
       border: 1px solid var(--line);
@@ -357,7 +357,7 @@
       line-height: 1.45;
     }
 
-    section { padding: 92px 0; }
+    section { padding: 76px 0; }
 
     .section-head {
       display: grid;
@@ -659,6 +659,13 @@
       line-height: 1.45;
     }
 
+    .career-item p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -853,9 +860,7 @@
 
       .hero-grid { gap: 44px; }
       .signal-card { max-width: 620px; }
-      .metrics { grid-template-columns: repeat(2, 1fr); }
-      .metric:nth-child(2) { border-right: 0; }
-      .metric:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+      .metrics { grid-template-columns: repeat(3, 1fr); }
       .expertise-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; }
       .case-flow, .career-strip { grid-template-columns: 1fr 1fr; }
       .career-item:nth-child(2) { border-right: 0; }
@@ -927,9 +932,8 @@
         <span>YUSUKE IMAI</span>
       </a>
       <div class="nav-links">
-        <a href="#expertise">Expertise</a>
-        <a href="#case-study">Case Study</a>
-        <a href="#experience">Experience</a>
+        <a href="#case-study">Work</a>
+        <a href="#experience">Career</a>
         <a class="nav-cta" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       </div>
     </nav>
@@ -943,7 +947,7 @@
             <span class="eyebrow">Technical Project Manager / Data &amp; AI</span>
             <h1>技術を、<span>使われる仕組みに。</span></h1>
             <p class="hero-copy">
-              生成AIとエンタープライズIT基盤をつなぎ、厳格な要件下でも<strong>構想・技術判断・セキュリティ・導入定着</strong>まで前に進めるTechnical Project Managerです。
+              生成AI・Azure・エンタープライズITの知見を生かし、<strong>技術判断から導入・定着まで</strong>を担うTechnical Project Managerです。
             </p>
             <div class="actions">
               <a class="button primary" href="#case-study">代表事例を見る <span aria-hidden="true">↓</span></a>
@@ -951,63 +955,12 @@
             </div>
           </div>
 
-          <aside class="signal-card" aria-label="プロジェクト推進の特徴">
-            <div class="signal-top">
-              <span>Delivery framework</span>
-              <span class="live-dot" aria-hidden="true"></span>
-            </div>
-            <div class="signal-list">
-              <div class="signal-item">
-                <span class="signal-number">01</span>
-                <div><strong>Frame the problem</strong><span>業務課題と制約条件を整理し、解くべき問いを定義</span></div>
-              </div>
-              <div class="signal-item">
-                <span class="signal-number">02</span>
-                <div><strong>Make the decision</strong><span>技術提案を比較し、要件に合う方式を選択</span></div>
-              </div>
-              <div class="signal-item">
-                <span class="signal-number">03</span>
-                <div><strong>Drive adoption</strong><span>承認・開発・利用ルール・展開まで一貫して推進</span></div>
-              </div>
-            </div>
-          </aside>
         </div>
 
         <div class="metrics reveal" aria-label="主な実績">
-          <div class="metric"><strong>13+ yrs</strong><span>クラウド、ネットワーク、人事、公共領域での経験</span></div>
-          <div class="metric"><strong>2 apps</strong><span>生成AI文書レビュー支援アプリをリリース</span></div>
-          <div class="metric"><strong>約50%</strong><span>有識者レビュー時間を削減<br>※社内成果報告</span></div>
-          <div class="metric"><strong>2026.09</strong><span>公共分野の大規模システム更改を完了</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="expertise">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">Expertise</span>
-            <h2>技術と事業の間を、つなぐ。</h2>
-          </div>
-          <p class="section-intro">AIを「作る」だけでなく、企業の制約条件の中で技術の採否を判断し、関係者の合意を得て、現場で使われる状態まで届けます。</p>
-        </div>
-
-        <div class="expertise-grid">
-          <article class="expertise-card reveal">
-            <span class="card-index">01 / AI DELIVERY</span>
-            <h3>Generative AI Implementation</h3>
-            <p>ユースケース設計、方式評価、プロンプト方針、開発推進、利用ルールと組織展開までを一貫してリード。</p>
-          </article>
-          <article class="expertise-card reveal">
-            <span class="card-index">02 / SECURE AZURE</span>
-            <h3>Architecture &amp; Security</h3>
-            <p>ネットワーク・インフラの知見を生かし、閉域接続やアクセス制御を含むAzure活用の論点を整理。</p>
-          </article>
-          <article class="expertise-card reveal">
-            <span class="card-index">03 / TRANSFORMATION</span>
-            <h3>Enterprise Program Delivery</h3>
-            <p>複数チームと専門家をつなぎ、大規模・高信頼システムの設計、試験、移行、更改を工程横断で推進。</p>
-          </article>
+          <div class="metric"><strong>13+ yrs</strong><span>Enterprise IT</span></div>
+          <div class="metric"><strong>Data &amp; AI</strong><span>Azure / Generative AI</span></div>
+          <div class="metric"><strong>Technical PM</strong><span>技術判断から導入・定着まで</span></div>
         </div>
       </div>
     </section>
@@ -1017,9 +970,9 @@
         <div class="section-head reveal">
           <div>
             <span class="section-kicker">Selected Case Study</span>
-            <h2>生成AIを、<br>実務へ。</h2>
+            <h2>生成AIを、実務へ。</h2>
           </div>
-          <p class="section-intro">公共分野の大規模システム刷新プロジェクトにおける文書レビュー支援施策。本人はPMとして技術判断と導入推進を担当しました。</p>
+          <p class="section-intro">公共分野の文書レビュー業務を対象に、生成AI活用をPMとして推進しました。</p>
         </div>
 
         <article class="case-shell reveal">
@@ -1027,46 +980,19 @@
             <span class="case-meta-label">Public Sector × Generative AI</span>
             <span>Role: Project Manager / Technical Decision Lead</span>
           </div>
-          <h3 class="case-title">レビュー品質と生産性を両立する、<span>セキュアなAI活用基盤</span></h3>
-          <p class="case-lead">形式的な指摘に時間を要していた文書レビュー業務を対象に、Azure OpenAI ServiceとAzure AI Document Intelligenceを活用。技術選定から顧客承認、利用定着までを推進しました。</p>
+          <h3 class="case-title">文書レビューを、<span>生成AIで効率化。</span></h3>
+          <p class="case-lead">厳格なセキュリティ要件下で、生成AIレビュー支援アプリ2種の導入をPMとして推進しました。</p>
           <div class="tech-row" aria-label="使用技術">
             <span>Azure OpenAI Service</span>
-            <span>GPT-4o</span>
             <span>Azure AI Document Intelligence</span>
-            <span>Prompt Design</span>
-            <span>Secure Azure</span>
-          </div>
-
-          <div class="case-flow">
-            <div class="case-step">
-              <b>Situation</b>
-              <h3>厳格な制約</h3>
-              <p>機密性の高い情報を扱う環境で、レビュー工数の削減と品質の均一化が必要でした。</p>
-            </div>
-            <div class="case-step">
-              <b>Decision</b>
-              <h3>非RAGを選択</h3>
-              <p>RAGも検証した上で、参照情報の量・更新頻度・運用負荷を踏まえ、直接コンテキスト入力を採用。</p>
-            </div>
-            <div class="case-step">
-              <b>Architecture</b>
-              <h3>解析とレビューを分離</h3>
-              <p>Document IntelligenceでPDF解析を改善し、GPT-4oと観点別プロンプトでレビューを実行。</p>
-            </div>
-            <div class="case-step">
-              <b>Leadership</b>
-              <h3>専門家を接続</h3>
-              <p>開発メンバー、Microsoft技術者、Azure専門家、顧客の論点を整理し、承認と展開を推進。</p>
-            </div>
           </div>
 
           <div class="case-outcomes">
             <div>
               <span class="outcome-number">約50%<small>reduction</small></span>
             </div>
-            <p>専用アプリ2種をリリースし、社内成果報告では有識者のレビュー時間を約50％削減。対象グループ全員が少なくとも1回利用する状態まで展開しました。</p>
+            <p>技術方式の評価から顧客承認・利用展開までを担当。社内成果報告では、有識者のレビュー時間を約50％削減しました。</p>
           </div>
-          <p class="disclosure-note">※ アプリケーションのコーディングは開発メンバーが担当。本人はPMとして、技術提案の評価・採否判断、セキュリティ対応、関係者合意、導入推進を担当。守秘義務に配慮し、案件名・顧客名・構成詳細は一般化しています。</p>
         </article>
       </div>
     </section>
@@ -1076,85 +1002,16 @@
         <div class="section-head reveal">
           <div>
             <span class="section-kicker">Experience</span>
-            <h2>変革を支える、複数領域の経験。</h2>
+            <h2>クラウドから、生成AIまで。</h2>
           </div>
-          <p class="section-intro">2013年にNTT DATAへ入社。技術、事業、人材の各視点を経験し、現在は公共領域のインフラ刷新と生成AI活用を推進しています。</p>
-        </div>
-
-        <div class="portfolio-grid">
-          <article class="portfolio-card reveal">
-            <span class="portfolio-date">Completed / Sep 2026</span>
-            <h3>公共分野の<span>大規模システム刷新・更改</span></h3>
-            <p>基本設計、提案、詳細設計、ハードウェア試験、非機能試験を工程横断で推進し、更改完了に貢献。</p>
-            <span class="portfolio-tag">Infrastructure Transformation</span>
-          </article>
-          <article class="portfolio-card reveal">
-            <span class="portfolio-date">Completed / Mar 2023</span>
-            <h3>文教システムの<span>複数拠点同時更改</span></h3>
-            <p>移行方式、事前検証、当日計画を整備。関係者をつなぎ、複数拠点の移行を計画どおり完了。</p>
-            <span class="portfolio-tag">Migration Planning</span>
-          </article>
-          <article class="portfolio-card reveal">
-            <span class="portfolio-date">2020 — 2022</span>
-            <h3>全社人事制度・人材施策</h3>
-            <p>制度企画・運用と人材データ分析を担当。経営層向けに人事上の論点と判断材料を資料化し、説明を実施。</p>
-            <span class="portfolio-tag">HR Strategy &amp; Analytics</span>
-          </article>
+          <p class="section-intro">クラウド、ネットワーク、人事、公共領域を経験し、現在はインフラ刷新と生成AI活用を推進しています。</p>
         </div>
 
         <div class="career-strip reveal" aria-label="キャリアの歩み">
-          <div class="career-item"><time>2013 — 2015</time><strong>Cloud Service<br>Product Planning</strong></div>
-          <div class="career-item"><time>2015 — 2020</time><strong>Enterprise Network<br>Solutions</strong></div>
-          <div class="career-item"><time>2020 — 2022</time><strong>HR Strategy &amp;<br>Executive Communication</strong></div>
-          <div class="career-item"><time>2022 — Present</time><strong>Public Sector &amp;<br>Generative AI</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap">
-        <div class="about-grid">
-          <aside class="identity-card reveal">
-            <div class="monogram" aria-hidden="true">YI</div>
-            <h3>Yusuke Imai</h3>
-            <p>Technical Project Manager<br>Tokyo, Japan</p>
-            <div class="status"><span class="live-dot" aria-hidden="true"></span>Data &amp; AI opportunities</div>
-          </aside>
-
-          <div class="about-copy reveal">
-            <span class="section-kicker">About</span>
-            <h2>判断し、つなぎ、<br>定着させる。</h2>
-            <p>クラウドサービス企画、法人ネットワーク、人事企画、公共分野の大規模システム刷新を経験。技術を理解しながら、ビジネス課題、セキュリティ、運用を含む全体像から最適な進め方を判断します。</p>
-
-            <div class="principles">
-              <div class="principle">
-                <span>01</span>
-                <div><strong>Technology with judgment</strong><p>流行ではなく、業務要件とデータ特性から技術を選ぶ。</p></div>
-              </div>
-              <div class="principle">
-                <span>02</span>
-                <div><strong>Translation across teams</strong><p>顧客、専門家、開発チームの言葉をつなぎ、意思決定を前へ進める。</p></div>
-              </div>
-              <div class="principle">
-                <span>03</span>
-                <div><strong>Adoption over launch</strong><p>リリースで終わらせず、利用ルールと改善サイクルまで設計する。</p></div>
-              </div>
-            </div>
-
-            <div class="skill-list" aria-label="主な専門領域">
-              <span>Generative AI Adoption</span>
-              <span>Azure OpenAI Service</span>
-              <span>Azure AI Document Intelligence</span>
-              <span>Prompt Design</span>
-              <span>Technical Project Management</span>
-              <span>AI Transformation</span>
-              <span>Enterprise IT</span>
-              <span>Cloud &amp; Network</span>
-              <span>Security Alignment</span>
-              <span>Non-functional Testing</span>
-              <span>Stakeholder Management</span>
-            </div>
-          </div>
+          <div class="career-item"><time>2013 — 2015</time><strong>Cloud Service Planning</strong><p>クラウドサービスの商品企画</p></div>
+          <div class="career-item"><time>2015 — 2020</time><strong>Network Solutions</strong><p>法人ネットワークの企画・提案・運用</p></div>
+          <div class="career-item"><time>2020 — 2022</time><strong>HR Strategy</strong><p>全社人事施策と経営層向け説明</p></div>
+          <div class="career-item"><time>2022 — Present</time><strong>Public Sector &amp; AI</strong><p>大規模更改と生成AI導入</p></div>
         </div>
       </div>
     </section>
@@ -1164,12 +1021,11 @@
         <div class="contact-panel reveal">
           <div>
             <span class="section-kicker" style="color:#fff">Next</span>
-            <h2>Data &amp; AIの変革を、構想から実装・定着まで。</h2>
-            <p>Generative AI、AI Transformation、Technical Program / Project Management領域の機会に関心があります。</p>
+            <h2>Data &amp; AIの変革を、現場へ。</h2>
+            <p>生成AI導入、AI Transformation、Technical Project Management領域に関心があります。</p>
           </div>
           <div class="contact-actions">
             <a class="button" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedInで連絡する <span aria-hidden="true">↗</span></a>
-            <a class="button secondary" href="https://github.com/yimai" target="_blank" rel="noopener noreferrer">GitHubを見る <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>
@@ -1179,7 +1035,7 @@
   <footer>
     <div class="wrap footer-row">
       <span>© <span id="year"></span> Yusuke Imai. All rights reserved.</span>
-      <span>Last updated Oct 2026 · <a href="#top">Back to top ↑</a></span>
+      <span><a href="https://github.com/yimai" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#top">Back to top ↑</a></span>
     </div>
   </footer>
 
