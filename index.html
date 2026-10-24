@@ -3,1040 +3,289 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="生成AIとエンタープライズITの知見を生かし、複雑な技術要件を実務に落とし込むTechnical Project Manager、今井祐介のポートフォリオ。">
+  <meta name="description" content="生成AIの実務導入を、技術判断からリリース・利用定着まで主導するTechnical Program Manager、今井祐介のポートフォリオ。">
   <meta name="theme-color" content="#07111f">
   <link rel="canonical" href="https://yimai.github.io/yusuke-imai-portfolio/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Yusuke Imai | Technical Project Manager">
-  <meta property="og:description" content="Generative AI × Enterprise IT. 技術を、現場で使われる仕組みに。">
+  <meta property="og:title" content="Yusuke Imai | Technical Program Manager">
+  <meta property="og:description" content="Enterprise Generative AI Adoption — 技術を、現場で使われる仕組みに。">
   <meta property="og:url" content="https://yimai.github.io/yusuke-imai-portfolio/">
   <meta name="twitter:card" content="summary">
-  <title>Yusuke Imai | Technical Project Manager</title>
+  <title>Yusuke Imai | Enterprise Generative AI Adoption</title>
   <style>
     :root {
-      --navy: #07111f;
-      --navy-soft: #101d2f;
+      --navy-950: #050b14;
+      --navy-900: #07111f;
       --ink: #101827;
-      --muted: #5e6878;
-      --paper: #f5f6f8;
+      --muted: #5f6b7d;
+      --paper: #f4f6f8;
       --surface: #ffffff;
-      --line: #dfe3e9;
-      --blue: #2f64ff;
-      --blue-dark: #1646d8;
-      --mint: #9de4d1;
-      --radius: 24px;
+      --line: #dce2e9;
+      --blue: #315cff;
+      --blue-dark: #193fd0;
+      --mint: #95ead2;
+      --cyan: #77d9ff;
+      --radius-lg: 30px;
+      --radius-md: 20px;
       --shadow: 0 24px 70px rgba(7, 17, 31, 0.10);
-      --wrap: min(1120px, calc(100% - 44px));
+      --wrap: min(1160px, calc(100% - 48px));
     }
-
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 92px;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 88% 8%, rgba(47, 100, 255, 0.09), transparent 28rem),
-        var(--paper);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif; line-height: 1.75; -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
-
-    ::selection {
-      color: #fff;
-      background: var(--blue);
-    }
-
-    .skip-link {
-      position: fixed;
-      top: 8px;
-      left: 8px;
-      z-index: 100;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--blue);
-      border-radius: 8px;
-      transform: translateY(-160%);
-    }
-
+    ::selection { color: #fff; background: var(--blue); }
+    .skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 10px 14px; color: #fff; background: var(--blue); border-radius: 8px; transform: translateY(-160%); }
     .skip-link:focus { transform: translateY(0); }
-
-    .wrap {
-      width: var(--wrap);
-      margin-inline: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(223, 227, 233, 0.76);
-      background: rgba(245, 246, 248, 0.86);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: var(--navy);
-      border-radius: 10px;
-      font-size: 0.72rem;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 650;
-    }
-
-    .nav-links a {
-      padding: 8px 0;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: color 160ms ease, border-color 160ms ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--ink);
-      border-bottom-color: var(--blue);
-    }
-
-    .nav-cta {
-      padding: 10px 16px !important;
-      color: #fff !important;
-      background: var(--navy);
-      border: 0 !important;
-      border-radius: 999px;
-    }
-
+    .wrap { width: var(--wrap); margin-inline: auto; }
+    header { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid rgba(220, 226, 233, 0.76); background: rgba(244, 246, 248, 0.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -0.025em; text-decoration: none; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; color: #fff; background: var(--navy-900); border-radius: 10px; font-size: 0.72rem; letter-spacing: 0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 0.84rem; font-weight: 700; }
+    .nav-links a { padding: 8px 0; text-decoration: none; border-bottom: 2px solid transparent; transition: color 160ms ease, border-color 160ms ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); border-bottom-color: var(--blue); }
+    .nav-cta { padding: 9px 16px !important; color: #fff !important; background: var(--navy-900); border: 0 !important; border-radius: 999px; }
     main { overflow: hidden; }
-
-    .hero {
-      position: relative;
-      padding: 108px 0 64px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      top: -260px;
-      right: -160px;
-      border: 1px solid rgba(47, 100, 255, 0.16);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 54px rgba(47, 100, 255, 0.035),
-        0 0 0 112px rgba(47, 100, 255, 0.025);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 820px);
-      gap: 0;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--blue-dark);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--blue);
-      border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(47, 100, 255, 0.12);
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 24px 0;
-      font-size: clamp(3rem, 6vw, 4.7rem);
-      line-height: 0.99;
-      letter-spacing: -0.067em;
-    }
-
-    h1 span {
-      display: block;
-      color: var(--blue);
-    }
-
-    .hero-copy {
-      max-width: 680px;
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(1.02rem, 2vw, 1.2rem);
-    }
-
+    .hero { position: relative; padding: 112px 0 74px; background: linear-gradient(rgba(7,17,31,.035) 1px,transparent 1px), linear-gradient(90deg,rgba(7,17,31,.035) 1px,transparent 1px), radial-gradient(circle at 86% 9%,rgba(49,92,255,.14),transparent 27rem), var(--paper); background-size: 42px 42px,42px 42px,auto,auto; }
+    .hero::after { content: ""; position: absolute; width: 440px; height: 440px; top: -260px; right: -130px; border: 1px solid rgba(49,92,255,.18); border-radius: 50%; box-shadow: 0 0 0 56px rgba(49,92,255,.035), 0 0 0 116px rgba(49,92,255,.02); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 72px; align-items: end; }
+    .eyebrow, .section-kicker { display: inline-flex; align-items: center; gap: 9px; color: var(--blue-dark); font-size: .72rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--blue); border-radius: 50%; box-shadow: 0 0 0 5px rgba(49,92,255,.12); }
+    h1 { max-width: 790px; margin: 26px 0; font-size: clamp(3rem,6vw,5.1rem); line-height: .98; letter-spacing: -.07em; }
+    h1 span { display: block; color: var(--blue); }
+    .hero-copy { max-width: 730px; margin: 0; color: var(--muted); font-size: clamp(1rem,2vw,1.17rem); }
     .hero-copy strong { color: var(--ink); }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .button {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 0 20px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.72);
-      font-weight: 750;
-      text-decoration: none;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .button.primary {
-      color: #fff;
-      background: var(--blue);
-      border-color: var(--blue);
-      box-shadow: 0 12px 30px rgba(47, 100, 255, 0.22);
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(7, 17, 31, 0.12);
-    }
-
-    .signal-card {
-      position: relative;
-      padding: 30px;
-      color: #fff;
-      background: var(--navy);
-      border-radius: 30px;
-      box-shadow: 0 32px 80px rgba(7, 17, 31, 0.22);
-      isolation: isolate;
-      overflow: hidden;
-    }
-
-    .signal-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -110px -130px auto;
-      width: 290px;
-      height: 290px;
-      z-index: -1;
-      background: radial-gradient(circle, rgba(47, 100, 255, 0.86), transparent 66%);
-      border-radius: 50%;
-    }
-
-    .signal-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 27px;
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 0.72rem;
-      font-weight: 750;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .live-dot {
-      width: 9px;
-      height: 9px;
-      background: var(--mint);
-      border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(157, 228, 209, 0.12);
-    }
-
-    .signal-list { display: grid; gap: 6px; }
-
-    .signal-item {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 14px;
-      padding: 17px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.11);
-    }
-
-    .signal-number {
-      color: var(--mint);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-    }
-
-    .signal-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.98rem;
-    }
-
-    .signal-item span:last-child {
-      display: block;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.82rem;
-      line-height: 1.55;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 72px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .metric {
-      min-height: 148px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 25px 28px;
-      border-right: 1px solid var(--line);
-    }
-
-    .metric:last-child { border-right: 0; }
-
-    .metric strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--navy);
-      font-size: clamp(1.8rem, 4vw, 2.55rem);
-      line-height: 1.1;
-      letter-spacing: -0.045em;
-    }
-
-    .metric span {
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }
-
-    section { padding: 76px 0; }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 44px;
-      align-items: end;
-      margin-bottom: 40px;
-    }
-
-    .section-kicker {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--blue-dark);
-      font-size: 0.72rem;
-      font-weight: 850;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4.7vw, 3.65rem);
-      line-height: 1.12;
-      letter-spacing: -0.047em;
-    }
-
-    .section-intro {
-      max-width: 660px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .expertise-card {
-      min-height: 284px;
-      display: flex;
-      flex-direction: column;
-      padding: 29px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 18px 46px rgba(7, 17, 31, 0.055);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .expertise-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .card-index {
-      margin-bottom: auto;
-      color: var(--blue);
-      font-size: 0.75rem;
-      font-weight: 850;
-      letter-spacing: 0.1em;
-    }
-
-    .expertise-card h3 {
-      margin: 34px 0 10px;
-      font-size: 1.25rem;
-      line-height: 1.35;
-    }
-
-    .expertise-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .case-section {
-      color: #fff;
-      background: var(--navy);
-    }
-
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 0 20px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.78); font-weight: 780; text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease; }
+    .button.primary { color: #fff; background: var(--blue); border-color: var(--blue); box-shadow: 0 12px 30px rgba(49,92,255,.23); }
+    .button:hover, .button:focus-visible { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(7,17,31,.12); }
+    .hero-aside { position: relative; padding: 28px; color: #fff; background: var(--navy-900); border-radius: 26px; box-shadow: 0 30px 80px rgba(7,17,31,.22); overflow: hidden; }
+    .hero-aside::after { content: ""; position: absolute; width: 210px; height: 210px; right: -90px; bottom: -105px; background: radial-gradient(circle,rgba(49,92,255,.9),transparent 68%); border-radius: 50%; }
+    .aside-label { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; color: rgba(255,255,255,.54); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .pulse { width: 8px; height: 8px; background: var(--mint); border-radius: 50%; box-shadow: 0 0 0 6px rgba(149,234,210,.12); }
+    .hero-aside strong { position: relative; z-index: 1; display: block; margin-bottom: 12px; font-size: 1.15rem; line-height: 1.4; }
+    .hero-aside p { position: relative; z-index: 1; margin: 0; color: rgba(255,255,255,.62); font-size: .84rem; }
+    .proof-strip { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 68px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow); overflow: hidden; }
+    .proof { min-height: 142px; display: flex; flex-direction: column; justify-content: center; padding: 25px 28px; border-right: 1px solid var(--line); }
+    .proof:last-child { border-right: 0; }
+    .proof strong { display: block; margin-bottom: 7px; color: var(--navy-900); font-size: clamp(1.4rem,3.3vw,2.25rem); line-height: 1.08; letter-spacing: -.045em; }
+    .proof span { color: var(--muted); font-size: .78rem; line-height: 1.5; }
+    section { padding: 84px 0; }
+    .section-head { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: end; margin-bottom: 42px; }
+    .section-kicker { display: block; margin-bottom: 10px; }
+    h2 { margin: 0; font-size: clamp(2.05rem,4.7vw,3.7rem); line-height: 1.1; letter-spacing: -.05em; }
+    .section-intro { max-width: 660px; margin: 0; color: var(--muted); font-size: 1rem; }
+    .operating-model, .career-section { background: #fff; }
+    .model-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+    .model-step { min-height: 300px; display: flex; flex-direction: column; padding: 28px; background: var(--surface); }
+    .model-step:nth-child(2) { background: #f4f7ff; }
+    .model-step:nth-child(3) { background: #edf3ff; }
+    .model-step:nth-child(4) { color: #fff; background: var(--navy-900); }
+    .step-index { color: var(--blue); font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
+    .model-step:nth-child(4) .step-index { color: var(--mint); }
+    .model-step h3 { margin: auto 0 10px; font-size: 1.18rem; }
+    .model-step p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .model-step:nth-child(4) p { color: rgba(255,255,255,.62); }
+    .case-section { color: #fff; background: radial-gradient(circle at 90% 12%,rgba(49,92,255,.25),transparent 28rem),var(--navy-950); }
     .case-section .section-kicker { color: var(--mint); }
-    .case-section .section-intro { color: rgba(255, 255, 255, 0.64); }
-
-    .case-shell {
-      padding: 38px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 30px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
-        var(--navy-soft);
+    .case-section .section-intro { color: rgba(255,255,255,.62); }
+    .case-shell { border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius-lg); background: linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.02)); overflow: hidden; }
+    .case-top { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; padding: 42px; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .case-meta { display: inline-block; margin-bottom: 18px; color: var(--mint); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .case-top h3 { max-width: 720px; margin: 0 0 15px; font-size: clamp(1.85rem,4vw,3rem); line-height: 1.22; letter-spacing: -.04em; }
+    .case-top p { margin: 0; color: rgba(255,255,255,.64); }
+    .role-card { align-self: stretch; padding: 25px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(255,255,255,.04); }
+    .role-card small { display: block; margin-bottom: 14px; color: rgba(255,255,255,.45); font-size: .68rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .role-card strong { display: block; margin-bottom: 13px; font-size: 1.08rem; }
+    .role-card ul { margin: 0; padding: 0; list-style: none; color: rgba(255,255,255,.62); font-size: .8rem; }
+    .role-card li { position: relative; padding: 7px 0 7px 17px; border-top: 1px solid rgba(255,255,255,.08); }
+    .role-card li::before { content: ""; position: absolute; left: 0; top: 15px; width: 6px; height: 6px; background: var(--mint); border-radius: 50%; }
+    .decision-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+    .decision { min-height: 325px; padding: 32px; border-right: 1px solid rgba(255,255,255,.1); }
+    .decision:last-child { border-right: 0; }
+    .decision-number { display: block; margin-bottom: 44px; color: var(--cyan); font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
+    .decision h4 { margin: 0 0 11px; font-size: 1.07rem; }
+    .decision p { margin: 0; color: rgba(255,255,255,.58); font-size: .82rem; }
+    .case-bottom { display: grid; grid-template-columns: .82fr 1.18fr; gap: 32px; align-items: center; padding: 36px 42px; background: var(--blue); }
+    .outcome { font-size: clamp(3.2rem,7vw,5.7rem); font-weight: 900; line-height: .9; letter-spacing: -.075em; }
+    .outcome small { display: block; margin-top: 12px; font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+    .case-bottom p { margin: 0; color: rgba(255,255,255,.82); font-size: .92rem; }
+    .disclosure-note { margin: 16px 4px 0; color: rgba(255,255,255,.4); font-size: .7rem; }
+    .judgement-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; }
+    .judgement-lead { padding: 36px; color: #fff; background: var(--navy-900); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+    .judgement-lead small { color: var(--mint); font-size: .7rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .judgement-lead h3 { margin: 54px 0 16px; font-size: clamp(1.55rem,3vw,2.35rem); line-height: 1.25; letter-spacing: -.04em; }
+    .judgement-lead p { margin: 0; color: rgba(255,255,255,.62); font-size: .9rem; }
+    .lens-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .lens { min-height: 190px; padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); }
+    .lens b { display: block; margin-bottom: 24px; color: var(--blue); font-size: .72rem; letter-spacing: .1em; }
+    .lens strong { display: block; margin-bottom: 7px; }
+    .lens p { margin: 0; color: var(--muted); font-size: .8rem; }
+    .career-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .timeline { position: relative; padding: 8px 0 8px 26px; border-left: 1px solid var(--line); }
+    .career-item { position: relative; display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 0 0 28px; }
+    .career-item:last-child { padding-bottom: 0; }
+    .career-item::before { content: ""; position: absolute; left: -31px; top: 9px; width: 9px; height: 9px; background: #fff; border: 3px solid var(--blue); border-radius: 50%; }
+    .career-item time { color: var(--blue-dark); font-size: .72rem; font-weight: 850; }
+    .career-item strong { display: block; margin-bottom: 5px; font-size: .94rem; }
+    .career-item p { margin: 0; color: var(--muted); font-size: .79rem; }
+    .credentials { display: grid; gap: 14px; }
+    .credential { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; padding: 23px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); }
+    .credential-mark { width: 56px; height: 56px; display: grid; place-items: center; color: var(--blue-dark); background: #e8edff; border-radius: 16px; font-size: .72rem; font-weight: 900; }
+    .credential small { display: block; color: var(--muted); font-size: .7rem; }
+    .credential strong { display: block; margin: 3px 0 4px; line-height: 1.45; }
+    .credential p { margin: 0; color: var(--muted); font-size: .78rem; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .skill-list span { padding: 7px 11px; background: #fff; border: 1px solid var(--line); border-radius: 999px; color: #354052; font-size: .74rem; font-weight: 700; }
+    .contact { padding-top: 42px; }
+    .contact-panel { position: relative; display: grid; grid-template-columns: 1.25fr .75fr; gap: 44px; align-items: center; padding: 54px; color: #fff; background: var(--blue); border-radius: 32px; overflow: hidden; }
+    .contact-panel::after { content: ""; position: absolute; width: 320px; height: 320px; right: -110px; bottom: -180px; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; box-shadow: 0 0 0 48px rgba(255,255,255,.05); }
+    .contact-panel h2, .contact-panel p, .contact-actions { position: relative; z-index: 1; }
+    .contact-panel p { margin: 18px 0 0; color: rgba(255,255,255,.78); }
+    .contact-actions { display: grid; gap: 10px; }
+    .contact-actions .button { color: var(--navy-900); background: #fff; border-color: #fff; }
+    .contact-actions .button.secondary { color: #fff; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.24); }
+    footer { padding: 38px 0 46px; color: var(--muted); font-size: .76rem; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-row a { color: var(--ink); font-weight: 700; text-decoration: none; }
+    .reveal { opacity: 1; transform: none; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width:980px) {
+      .hero-grid,.section-head,.case-top,.judgement-grid,.career-grid,.contact-panel { grid-template-columns:1fr; }
+      .hero-aside { max-width:520px; }
+      .model-grid { grid-template-columns:1fr 1fr; }
+      .decision-grid { grid-template-columns:1fr; }
+      .decision { min-height:auto; border-right:0; border-bottom:1px solid rgba(255,255,255,.1); }
+      .decision:last-child { border-bottom:0; }
+      .decision-number { margin-bottom:22px; }
+      .contact-actions { max-width:360px; }
     }
-
-    .case-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 16px;
-      padding-bottom: 26px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    @media (max-width:680px) {
+      :root { --wrap:min(100% - 30px,1160px); }
+      .nav-links a:not(.nav-cta) { display:none; }
+      .brand { font-size:.88rem; }
+      .hero { padding:78px 0 48px; }
+      h1 { font-size:clamp(2.7rem,11vw,4.1rem); }
+      .actions .button { width:100%; }
+      .proof-strip,.model-grid,.lens-list,.case-bottom { grid-template-columns:1fr; }
+      .proof { min-height:118px; border-right:0; border-bottom:1px solid var(--line); }
+      .proof:last-child { border-bottom:0; }
+      section { padding:70px 0; }
+      .model-step { min-height:230px; }
+      .case-top { padding:28px; }
+      .decision { padding:28px; }
+      .case-bottom { padding:30px 28px; }
+      .career-item { grid-template-columns:1fr; gap:4px; }
+      .contact-panel { padding:36px 26px; }
+      .footer-row { align-items:flex-start; flex-direction:column; }
     }
-
-    .case-meta-label {
-      color: var(--mint);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .case-meta span:last-child {
-      color: rgba(255, 255, 255, 0.52);
-      font-size: 0.8rem;
-    }
-
-    .case-title {
-      max-width: 820px;
-      margin: 34px 0 14px;
-      font-size: clamp(1.85rem, 4vw, 3rem);
-      line-height: 1.25;
-      letter-spacing: -0.035em;
-    }
-
-    .case-title span { display: block; }
-
-    .case-lead {
-      max-width: 840px;
-      margin: 0;
-      color: rgba(255, 255, 255, 0.68);
-    }
-
-    .tech-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 22px;
-    }
-
-    .tech-row span {
-      padding: 6px 10px;
-      color: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .case-flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 36px;
-    }
-
-    .case-step {
-      min-height: 230px;
-      padding: 23px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .case-step b {
-      display: block;
-      margin-bottom: 24px;
-      color: var(--mint);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .case-step h3 {
-      margin: 0 0 9px;
-      font-size: 1.03rem;
-    }
-
-    .case-step p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.84rem;
-      line-height: 1.65;
-    }
-
-    .case-outcomes {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 30px;
-      align-items: center;
-      margin-top: 28px;
-      padding: 28px;
-      border-radius: 20px;
-      background: var(--blue);
-    }
-
-    .outcome-number {
-      display: block;
-      font-size: clamp(3.2rem, 8vw, 5.7rem);
-      font-weight: 850;
-      line-height: 0.95;
-      letter-spacing: -0.065em;
-    }
-
-    .outcome-number small {
-      margin-left: 8px;
-      font-size: 0.82rem;
-      letter-spacing: 0;
-    }
-
-    .case-outcomes p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 0.94rem;
-    }
-
-    .disclosure-note {
-      margin: 18px 2px 0;
-      color: rgba(255, 255, 255, 0.42);
-      font-size: 0.72rem;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .portfolio-card {
-      min-height: 310px;
-      display: flex;
-      flex-direction: column;
-      padding: 29px;
-      color: var(--ink);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .portfolio-card:nth-child(2) { background: #eaf0ff; }
-    .portfolio-card:nth-child(3) { background: #eaf7f3; }
-
-    .portfolio-date {
-      color: var(--blue-dark);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .portfolio-card h3 {
-      margin: 44px 0 12px;
-      font-size: 1.33rem;
-      line-height: 1.38;
-    }
-
-    .portfolio-card h3 span { display: block; }
-
-    .portfolio-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .portfolio-tag {
-      align-self: flex-start;
-      margin-top: auto;
-      padding: 5px 10px;
-      border: 1px solid rgba(16, 24, 39, 0.15);
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 750;
-    }
-
-    .career-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 22px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .career-item {
-      padding: 24px 18px;
-      border-right: 1px solid var(--line);
-    }
-
-    .career-item:last-child { border-right: 0; }
-
-    .career-item time {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--blue-dark);
-      font-size: 0.7rem;
-      font-weight: 800;
-    }
-
-    .career-item strong {
-      display: block;
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }
-
-    .career-item p {
-      margin: 7px 0 0;
-      color: var(--muted);
-      font-size: 0.75rem;
-      line-height: 1.5;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 62px;
-      align-items: start;
-    }
-
-    .identity-card {
-      position: sticky;
-      top: 104px;
-      padding: 30px;
-      color: #fff;
-      background: var(--navy);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .monogram {
-      width: 84px;
-      height: 84px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 28px;
-      color: var(--navy);
-      background: var(--mint);
-      border-radius: 22px;
-      font-size: 1.45rem;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-    }
-
-    .identity-card h3 {
-      margin: 0 0 4px;
-      font-size: 1.42rem;
-    }
-
-    .identity-card p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 0.84rem;
-    }
-
-    .status {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      color: rgba(255, 255, 255, 0.74);
-      font-size: 0.78rem;
-    }
-
-    .about-copy > p {
-      margin: 0 0 28px;
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .principles {
-      display: grid;
-      gap: 12px;
-      margin: 0 0 34px;
-    }
-
-    .principle {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 14px;
-      padding: 18px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .principle span {
-      color: var(--blue);
-      font-size: 0.78rem;
-      font-weight: 850;
-    }
-
-    .principle strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .principle p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-list span {
-      padding: 7px 11px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: #354052;
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-
-    .contact { padding-top: 38px; }
-
-    .contact-panel {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 44px;
-      align-items: center;
-      padding: 54px;
-      color: #fff;
-      background: var(--blue);
-      border-radius: 32px;
-      overflow: hidden;
-    }
-
-    .contact-panel::after {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      right: -110px;
-      bottom: -180px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 50%;
-      box-shadow: 0 0 0 48px rgba(255, 255, 255, 0.05);
-    }
-
-    .contact-panel h2 {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-    }
-
-    .contact-panel p {
-      position: relative;
-      z-index: 1;
-      margin: 18px 0 0;
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .contact-actions {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 10px;
-    }
-
-    .contact-actions .button {
-      color: var(--navy);
-      background: #fff;
-      border-color: #fff;
-    }
-
-    .contact-actions .button.secondary {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    footer {
-      padding: 38px 0 46px;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-row a {
-      color: var(--ink);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    @media (max-width: 940px) {
-      .hero-grid,
-      .section-head,
-      .about-grid,
-      .contact-panel {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid { gap: 44px; }
-      .signal-card { max-width: 620px; }
-      .metrics { grid-template-columns: repeat(3, 1fr); }
-      .expertise-grid, .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .case-flow, .career-strip { grid-template-columns: 1fr 1fr; }
-      .career-item:nth-child(2) { border-right: 0; }
-      .career-item:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
-      .identity-card { position: static; }
-      .contact-actions { max-width: 360px; }
-    }
-
-    @media (max-width: 680px) {
-      :root { --wrap: min(100% - 30px, 1120px); }
-      .nav-links a:not(.nav-cta) { display: none; }
-      .brand { font-size: 0.9rem; }
-      .hero { padding: 78px 0 44px; }
-      h1 { font-size: clamp(2.65rem, 11vw, 4.1rem); }
-      h1 span { white-space: nowrap; }
-      .actions .button { width: 100%; }
-      section { padding: 70px 0; }
-      .metrics, .expertise-grid, .portfolio-grid, .case-flow, .case-outcomes, .career-strip { grid-template-columns: 1fr; }
-      .metric { min-height: 122px; border-right: 0; border-bottom: 1px solid var(--line); }
-      .metric:last-child { border-bottom: 0; }
-      .case-shell { padding: 24px; }
-      .case-step { min-height: auto; }
-      .case-outcomes { gap: 18px; padding: 24px; }
-      .portfolio-card { min-height: 270px; }
-      .career-item,
-      .career-item:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); }
-      .career-item:last-child { border-bottom: 0; }
-      .contact-panel { padding: 34px 26px; }
-      .footer-row { align-items: flex-start; flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; }
+      .reveal { opacity:1; transform:none; }
     }
   </style>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Yusuke Imai",
-      "url": "https://yimai.github.io/yusuke-imai-portfolio/",
-      "jobTitle": "Technical Project Manager",
-      "worksFor": {"@type": "Organization", "name": "NTT DATA"},
-      "sameAs": [
-        "https://www.linkedin.com/in/yimai/",
-        "https://github.com/yimai"
-      ],
-      "knowsAbout": [
-        "Generative AI",
-        "Microsoft Azure",
-        "Technical Project Management",
-        "Enterprise IT",
-        "Digital Transformation"
-      ]
-    }
+    {"@context":"https://schema.org","@type":"Person","name":"Yusuke Imai","url":"https://yimai.github.io/yusuke-imai-portfolio/","jobTitle":"Technical Program Manager","worksFor":{"@type":"Organization","name":"NTT DATA"},"sameAs":["https://www.linkedin.com/in/yimai/","https://github.com/yimai"],"knowsAbout":["Enterprise Generative AI Adoption","Microsoft Azure","Technical Program Management","Cloud and Security","Public Sector IT Transformation"]}
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
-
   <header>
     <nav class="wrap" aria-label="メインナビゲーション">
-      <a class="brand" href="#top" aria-label="ページ上部へ">
-        <span class="brand-mark" aria-hidden="true">YI</span>
-        <span>YUSUKE IMAI</span>
-      </a>
-      <div class="nav-links">
-        <a href="#case-study">Work</a>
-        <a href="#experience">Career</a>
-        <a class="nav-cta" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      </div>
+      <a class="brand" href="#top" aria-label="ページ上部へ"><span class="brand-mark" aria-hidden="true">YI</span><span>YUSUKE IMAI</span></a>
+      <div class="nav-links"><a href="#approach">Approach</a><a href="#case-study">Work</a><a href="#experience">Career</a><a class="nav-cta" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
     </nav>
   </header>
-
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <span class="eyebrow">Technical Project Manager</span>
-            <h1>技術を、<span>使われる仕組みに。</span></h1>
-            <p class="hero-copy">
-              生成AIとエンタープライズITの知見を生かし、<strong>複雑な技術要件を実務に落とし込む</strong>Technical Project Managerです。
-            </p>
-            <div class="actions">
-              <a class="button primary" href="#case-study">代表事例を見る <span aria-hidden="true">↓</span></a>
-              <a class="button" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedInプロフィール <span aria-hidden="true">↗</span></a>
-            </div>
+            <span class="eyebrow">Technical Program Manager</span>
+            <h1>生成AIを、<span>使われる仕組みに。</span></h1>
+            <p class="hero-copy">生成AIの実務導入を、<strong>技術判断からセキュリティ合意、リリース、利用定着まで</strong>主導します。クラウド・インフラと公共分野の大規模システム経験を土台に、構想を現場で機能する仕組みへ変えるTechnical Program Managerです。</p>
+            <div class="actions"><a class="button primary" href="#case-study">代表事例を見る <span aria-hidden="true">↓</span></a><a class="button" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedInプロフィール <span aria-hidden="true">↗</span></a></div>
           </div>
-
+          <aside class="hero-aside" aria-label="専門領域"><div class="aside-label"><span>Core focus</span><span class="pulse" aria-hidden="true"></span></div><strong>Enterprise Generative AI Adoption</strong><p>技術を選ぶだけでなく、組織の制約条件の中で「安全に使われ続ける状態」まで設計します。</p></aside>
         </div>
+        <div class="proof-strip reveal" aria-label="主な実績"><div class="proof"><strong>13+ years</strong><span>クラウド、ネットワーク、全社企画、公共IT</span></div><div class="proof"><strong>≈ 50% reduction</strong><span>生成AIによる有識者レビュー時間の削減</span></div><div class="proof"><strong>End-to-end</strong><span>構想・技術判断からリリース・定着まで</span></div></div>
+      </div>
+    </section>
 
-        <div class="metrics reveal" aria-label="主な実績">
-          <div class="metric"><strong>13+ yrs</strong><span>Enterprise IT</span></div>
-          <div class="metric"><strong>Generative AI</strong><span>Planning &amp; Adoption</span></div>
-          <div class="metric"><strong>Technical PM</strong><span>Evaluation to Delivery</span></div>
+    <section class="operating-model" id="approach">
+      <div class="wrap">
+        <div class="section-head reveal"><div><span class="section-kicker">How I Lead</span><h2>技術導入を、4つの局面で主導する。</h2></div><p class="section-intro">役割の中心は一つです。生成AI導入のTechnical Program Managerとして、課題発見、方式判断、実装推進、利用定着を一つの流れでつなぎます。</p></div>
+        <div class="model-grid reveal">
+          <article class="model-step"><span class="step-index">01 / FRAME</span><h3>業務課題を定義する</h3><p>現場のボトルネックを捉え、AIを使う目的、対象業務、期待成果を明確にします。</p></article>
+          <article class="model-step"><span class="step-index">02 / DECIDE</span><h3>必要十分な方式を選ぶ</h3><p>データ特性、精度、コスト、セキュリティ、運用負荷を比較し、採否を判断します。</p></article>
+          <article class="model-step"><span class="step-index">03 / DELIVER</span><h3>専門家と実装を進める</h3><p>開発チーム、クラウド専門家、顧客をつなぎ、品質・リスク・進行を統括します。</p></article>
+          <article class="model-step"><span class="step-index">04 / ADOPT</span><h3>利用定着まで仕上げる</h3><p>利用ルール、標準プロンプト、改善サイクルを整え、現場で使われ続ける状態をつくります。</p></article>
         </div>
       </div>
     </section>
 
     <section class="case-section" id="case-study">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">Selected Work</span>
-            <h2>生成AIの実務導入。</h2>
-          </div>
-          <p class="section-intro">公共分野のドキュメント業務を対象に、企画から導入・定着までをPMとして推進しました。</p>
-        </div>
-
+        <div class="section-head reveal"><div><span class="section-kicker">Selected Work</span><h2>公共分野における<br>生成AIの実務導入。</h2></div><p class="section-intro">機密性の高いドキュメントを扱う環境で、レビュー業務の生産性と品質を高める生成AI施策を、PMとして企画から定着まで推進しました。</p></div>
         <article class="case-shell reveal">
-          <div class="case-meta">
-            <span class="case-meta-label">Public Sector × Generative AI</span>
-            <span>Initiative PM</span>
+          <div class="case-top">
+            <div><span class="case-meta">Public Sector × Azure × Generative AI</span><h3>制約の多い環境でも、実務で使えるAIへ。</h3><p>形式的なドキュメントレビューの負荷を減らし、有識者が本質的な確認に集中できる状態を目指しました。新技術の採用自体ではなく、業務価値と安全な運用を成立させることをゴールに設定しています。</p></div>
+            <aside class="role-card"><small>My role</small><strong>生成AI活用施策のTechnical PM</strong><ul><li>業務課題とユースケースの具体化</li><li>技術提案の評価と改善方針の決定</li><li>Azure・セキュリティ要件の合意形成</li><li>開発、リリース、利用促進の統括</li></ul></aside>
           </div>
-          <h3 class="case-title">技術評価から、<span>現場展開まで。</span></h3>
-          <p class="case-lead">セキュリティ要件を踏まえた技術方式の評価、関係者との合意形成、導入後の利用展開までをリードしました。</p>
-
-          <div class="case-outcomes">
-            <div>
-              <span class="outcome-number">Adoption</span>
-            </div>
-            <p>インフラ・セキュリティと生成AIをつなぎ、厳格な要件下で実務に定着する仕組みを形にしました。</p>
+          <div class="decision-grid" aria-label="主な技術判断">
+            <article class="decision"><span class="decision-number">DECISION 01</span><h4>RAGを前提にしない</h4><p>Azure AI Searchを用いたRAGも検証した上で、参照情報の量と更新頻度を評価。固定的でコンテキスト内に収まる特性から、より単純で運用しやすい非RAG方式を選択しました。</p></article>
+            <article class="decision"><span class="decision-number">DECISION 02</span><h4>文書解析方式を見直す</h4><p>PDFの直接変換で十分な品質が得られない課題に対し、Azure AI Document Intelligenceの採用案を評価。閉域Azure環境との整合性を確認し、変換品質の改善を推進しました。</p></article>
+            <article class="decision"><span class="decision-number">DECISION 03</span><h4>レビュー観点を分割する</h4><p>用語、必須項目、その他の不備を一度に扱わず、観点別プロンプトを並列に実行して結果を統合。異なる性質の指摘を安定させる方針を採用しました。</p></article>
           </div>
+          <div class="case-bottom"><div class="outcome">≈ 50%<small>EXPERT REVIEW TIME REDUCTION</small></div><p>レビュー支援を実務に組み込み、有識者の確認時間を約50%削減。利用ルールとプロンプトを整備し、対象チームへの展開と継続的な改善につなげました。</p></div>
         </article>
+        <p class="disclosure-note">※ 守秘義務に配慮し、顧客名、システム固有情報、詳細な構成は公開可能な範囲に抽象化しています。アプリケーション実装は開発メンバーが担当し、本人はPMとして技術評価・意思決定・推進を担いました。</p>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="judgement">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">Experience</span>
-            <h2>クラウドから、生成AIまで。</h2>
-          </div>
-          <p class="section-intro">クラウド、ネットワーク、人事、公共領域を横断して経験しています。</p>
+        <div class="section-head reveal"><div><span class="section-kicker">Decision Lens</span><h2>「新しい技術」より、<br>「成立する仕組み」を選ぶ。</h2></div><p class="section-intro">技術の流行を起点にせず、業務、データ、セキュリティ、運用の条件を一つずつ整理し、実装可能な選択肢へ落とし込みます。</p></div>
+        <div class="judgement-grid reveal">
+          <article class="judgement-lead"><small>Technical judgement</small><h3>AIとエンタープライズITの間にある、見落とされやすい論点を扱う。</h3><p>生成AI単体の精度だけでなく、既存インフラとの接続、アクセス制御、監査、運用負荷、利用者の行動まで含めて導入を設計します。</p></article>
+          <div class="lens-list"><article class="lens"><b>01</b><strong>Business Value</strong><p>削減したい工数と改善したい品質を、技術要件より先に定義。</p></article><article class="lens"><b>02</b><strong>Data Fit</strong><p>データ量、更新頻度、形式、機密性から方式を比較。</p></article><article class="lens"><b>03</b><strong>Security</strong><p>閉域構成、認証・認可、鍵管理、監査を専門家と具体化。</p></article><article class="lens"><b>04</b><strong>Operability</strong><p>保守性、コスト、利用ルール、改善サイクルまで設計。</p></article></div>
         </div>
+      </div>
+    </section>
 
-        <div class="career-strip reveal" aria-label="キャリアの歩み">
-          <div class="career-item"><time>2013 — 2015</time><strong>Cloud Service Planning</strong><p>クラウドサービスの商品企画</p></div>
-          <div class="career-item"><time>2015 — 2020</time><strong>Network Solutions</strong><p>法人ネットワークの企画・提案・運用</p></div>
-          <div class="career-item"><time>2020 — 2022</time><strong>HR Strategy</strong><p>全社人事施策と経営層向け説明</p></div>
-          <div class="career-item"><time>2022 — Present</time><strong>Public Sector</strong><p>文教・官公庁システム更改、生成AI活用</p></div>
+    <section class="career-section" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal"><div><span class="section-kicker">Experience &amp; Credentials</span><h2>生成AI導入を支える、<br>13年以上の基盤。</h2></div><p class="section-intro">クラウド、ネットワーク、全社人事企画、公共分野の大規模刷新。異なる経験を「複数の肩書き」ではなく、技術導入を前に進めるための基盤として活用しています。</p></div>
+        <div class="career-grid reveal">
+          <div class="timeline" aria-label="キャリアの歩み">
+            <article class="career-item"><time>2013 — 2015</time><div><strong>Cloud Service Planning</strong><p>クラウドサービスの商品企画と、サービスを事業として成立させる視点を習得。</p></div></article>
+            <article class="career-item"><time>2015 — 2020</time><div><strong>Enterprise Network Solutions</strong><p>法人向けネットワークの企画・提案・運用を通じ、インフラと顧客要件を接続。</p></div></article>
+            <article class="career-item"><time>2020 — 2022</time><div><strong>Corporate HR Strategy</strong><p>全社人事施策の企画、経営層向け資料作成・説明を担当し、組織変革の視点を獲得。</p></div></article>
+            <article class="career-item"><time>2022 — Present</time><div><strong>Public Sector IT Transformation</strong><p>文教システム更改、官公庁の大規模システム刷新、生成AI活用施策を推進。</p></div></article>
+          </div>
+          <div>
+            <div class="credentials">
+              <article class="credential"><span class="credential-mark">GB</span><div><small>NTT DATA · 2025.11</small><strong>AI Engineering Transformation Engineer — Greenbelt</strong><p>生成AIの技術理解だけでなく、課題発見、方式判断、顧客合意、展開までの実践を評価。</p></div></article>
+              <article class="credential"><span class="credential-mark">AI</span><div><small>JDLA · 2025.01</small><strong>Generative AI Test 2024</strong><p>生成AIの基礎、活用、リスクに関する体系的な知識を確認。</p></div></article>
+            </div>
+            <div class="skill-list" aria-label="関連スキル"><span>Technical Program Management</span><span>Azure OpenAI Service</span><span>Azure AI Document Intelligence</span><span>Cloud &amp; Network</span><span>Security Alignment</span><span>Public Sector IT</span><span>Stakeholder Management</span><span>Prompt Engineering</span></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="wrap">
-        <div class="contact-panel reveal">
-          <div>
-            <span class="section-kicker" style="color:#fff">Next</span>
-            <h2>技術と現場を、つなぐ。</h2>
-            <p>Data &amp; AI、AI Transformation、Technical Project Management領域に関心があります。</p>
-          </div>
-          <div class="contact-actions">
-            <a class="button" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedInで連絡する <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </div>
+      <div class="wrap"><div class="contact-panel reveal"><div><span class="section-kicker" style="color:#fff">Next</span><h2>生成AIを、現場で機能する仕組みへ。</h2><p>Enterprise Generative AI Adoption / Technical Program Management領域の情報交換やご相談は、LinkedInからご連絡ください。</p></div><div class="contact-actions"><a class="button" href="https://www.linkedin.com/in/yimai/" target="_blank" rel="noopener noreferrer">LinkedInで連絡する <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/yimai" target="_blank" rel="noopener noreferrer">GitHubを見る <span aria-hidden="true">↗</span></a></div></div></div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© <span id="year"></span> Yusuke Imai. All rights reserved.</span>
-      <span><a href="https://github.com/yimai" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#top">Back to top ↑</a></span>
-    </div>
-  </footer>
-
+  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Yusuke Imai. All rights reserved.</span><span><a href="https://github.com/yimai" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#top">Back to top ↑</a></span></div></footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); } }); }, { threshold: 0.08 });
+    reveals.forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>
