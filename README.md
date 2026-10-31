@@ -1,6 +1,6 @@
 # Yusuke Imai — Portfolio
 
-大規模IT変革、生成AIの実務導入、B2Bサービス・ソリューション企画を経験するTechnical Program Managerとしての強みを紹介するポートフォリオです。
+大規模IT変革と生成AIの実務導入を、構想から利用定着まで主導するTechnical Program Managerとしての経験を簡潔に紹介するポートフォリオです。
 
 - 公開URL: https://yimai.github.io/yusuke-imai-portfolio/
 - 構成: HTML / CSS / Vanilla JavaScript
